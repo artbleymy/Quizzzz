@@ -85,10 +85,10 @@
                                 <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXj-RR-TVF">
-                                        <rect key="frame" x="0.0" y="56" width="42" height="28"/>
+                                        <rect key="frame" x="0.0" y="56" width="28" height="28"/>
                                         <color key="backgroundColor" red="0.88780897859999997" green="0.87595355153251719" blue="0.074855793686967931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="Rda-z0-cSr"/>
+                                            <constraint firstAttribute="width" constant="28" id="Rda-z0-cSr"/>
                                             <constraint firstAttribute="height" constant="28" id="eZL-aH-sSg"/>
                                         </constraints>
                                     </view>
@@ -143,6 +143,7 @@
                     </view>
                     <connections>
                         <outlet property="progressBar" destination="EXj-RR-TVF" id="beO-6x-fXU"/>
+                        <outlet property="progressBarWidth" destination="Rda-z0-cSr" id="N1e-aY-Ipk"/>
                         <outlet property="progressLabel" destination="diQ-dI-g12" id="QoG-AZ-Pgq"/>
                         <outlet property="questionLabel" destination="eJy-W7-IB1" id="xEU-eF-28D"/>
                         <outlet property="scoreLabel" destination="QSv-aw-t3d" id="Jez-2G-MAz"/>

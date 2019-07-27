@@ -12,6 +12,8 @@
 		85AF0BCE22EB4184003C1A2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AF0BCC22EB4184003C1A2D /* Main.storyboard */; };
 		85AF0BD022EB4187003C1A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AF0BCF22EB4187003C1A2D /* Assets.xcassets */; };
 		85AF0BD322EB4187003C1A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AF0BD122EB4187003C1A2D /* LaunchScreen.storyboard */; };
+		85BAB7A722EC943900308E93 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BAB7A522EC943900308E93 /* ProgressHUD.m */; };
+		85BAB7A822EC943900308E93 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85BAB7A622EC943900308E93 /* ProgressHUD.bundle */; };
 		85DF2A8322EB566300E1E9EF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF2A8222EB566300E1E9EF /* Question.swift */; };
 		85DF2A8622EB5CA000E1E9EF /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF2A8522EB5CA000E1E9EF /* QuestionBank.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 		85AF0BCF22EB4187003C1A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AF0BD222EB4187003C1A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85AF0BD422EB4187003C1A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85BAB7A322EC943800308E93 /* Quizzzz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quizzzz-Bridging-Header.h"; sourceTree = "<group>"; };
+		85BAB7A422EC943900308E93 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		85BAB7A522EC943900308E93 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		85BAB7A622EC943900308E93 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		85DF2A8222EB566300E1E9EF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		85DF2A8522EB5CA000E1E9EF /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +95,10 @@
 		85AF0BDC22EB42D6003C1A2D /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				85BAB7A622EC943900308E93 /* ProgressHUD.bundle */,
+				85BAB7A422EC943900308E93 /* ProgressHUD.h */,
+				85BAB7A522EC943900308E93 /* ProgressHUD.m */,
+				85BAB7A322EC943800308E93 /* Quizzzz-Bridging-Header.h */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 				TargetAttributes = {
 					85AF0BC422EB4184003C1A2D = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -160,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BAB7A822EC943900308E93 /* ProgressHUD.bundle in Resources */,
 				85AF0BD322EB4187003C1A2D /* LaunchScreen.storyboard in Resources */,
 				85AF0BD022EB4187003C1A2D /* Assets.xcassets in Resources */,
 				85AF0BCE22EB4184003C1A2D /* Main.storyboard in Resources */,
@@ -175,6 +187,7 @@
 			files = (
 				85DF2A8322EB566300E1E9EF /* Question.swift in Sources */,
 				85DF2A8622EB5CA000E1E9EF /* QuestionBank.swift in Sources */,
+				85BAB7A722EC943900308E93 /* ProgressHUD.m in Sources */,
 				85AF0BCB22EB4184003C1A2D /* ViewController.swift in Sources */,
 				85AF0BC922EB4184003C1A2D /* AppDelegate.swift in Sources */,
 			);
@@ -322,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7X82K2M45;
 				INFOPLIST_FILE = Quizzzz/Info.plist;
@@ -331,6 +345,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bleymy.Quizzzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizzzz/Supporting files/Quizzzz-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -340,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7X82K2M45;
 				INFOPLIST_FILE = Quizzzz/Info.plist;
@@ -349,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bleymy.Quizzzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizzzz/Supporting files/Quizzzz-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

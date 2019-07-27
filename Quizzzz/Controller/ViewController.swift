@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
     
+    @IBOutlet weak var progressBarWidth: NSLayoutConstraint!
+    
     
     
     override func viewDidLoad() {
@@ -45,11 +47,17 @@ class ViewController: UIViewController {
     func updateUI(){
         questionLabel.text = questionBank.list[currentQuestionIndex].questionText
         scoreLabel.text = "\(scorePoints)"
-        progressLabel.text = "\(currentQuestionIndex + 1)/\(numberOfQuestions)"
+        progressLabel.text = "\(currentQuestionIndex + 1) / \(numberOfQuestions)"
+        
+        progressBarWidth.constant = (view.frame.size.width / 13) * CGFloat(currentQuestionIndex + 1)
+//        print("\(progressBarWidth)")
+        //progressBar.frame.size.width = progressBarWidth.
+        //print("\(progressBar.frame.size.width)")
         
     }
     //go to next question
     func nextQuestion(){
+        
         currentQuestionIndex += 1
         if currentQuestionIndex < questionBank.list.count {
             updateUI()
@@ -70,17 +78,21 @@ class ViewController: UIViewController {
     }
     //start quizz again
     func startOver(){
+        
         currentQuestionIndex = 0
         scorePoints = 0
         updateUI()
+        
     }
     //check the answer
     func checkAnswer(){
-        if pickedAnswer == questionBank.list[currentQuestionIndex].answer {
+        
+        let correctAnswer = questionBank.list[currentQuestionIndex].answer
+        if pickedAnswer == correctAnswer {
             scorePoints += 1
-            print("correct")
+            ProgressHUD.showSuccess("Correct!")
         } else {
-            print("incorrect")
+            ProgressHUD.showError("Fail!")
         }
         
         nextQuestion()
